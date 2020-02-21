@@ -69,10 +69,12 @@ class CrawlerService
 
         $this->crawler->filter('.list-of-cards .item')->each(function ($node) {
             $this->responseArray[] = [
+                'id'        =>$node->filter('span[itemprop=sku]')->text(),
                 'title'     => $node->filter('.card-title')->text(),
                 'price'     => $node->filter('.card-price')->text(),
                 'subtitle'  => $node->filter('.card-subtitle')->text(),
                 'image'     => $node->filter('figure img')->image()->getUri(),
+                'sold'      => $node->filter('.vendido')->getNode(0) ? true : false
             ];
         });
 
