@@ -21,7 +21,7 @@ class CarController extends BaseController
      */
     public function index(CarRequest $request)
     {
-        $filters = [];
+        $filters = $request->query();
 
         $crawlerService = new CrawlerService($filters);
         $response = $crawlerService->getCars();

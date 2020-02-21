@@ -13,8 +13,7 @@ class CrawlerService
     /**
      * @var string
      */
-    private $crawlerUrl = 'https://seminovosbh.com.br/';
-    private $crawlerUrlDetail = 'https://seminovos.com.br/';
+    private $crawlerUrl = 'https://seminovos.com.br/';
 
     /**
      * @var array
@@ -30,15 +29,15 @@ class CrawlerService
      * @var array
      */
     private $availableFilters = [
-        'marca'     => '',
-        'modelo'    => '',
-        'an_min'    => '',
-        'ano_max'    => '',
-        'preco_min'  => '',
-        'preco_max'  => '',
-        'km_min'     => '',
-        'km_max'     => '',
-        'page'      => '?page='
+        'marca'     => '%s/',
+        'modelo'    => '%s/',
+        'ano_min'    => 'ano-%s',
+        'ano_max'    => '-%s/',
+        'preco_min'  => 'preco-%s',
+        'preco_max'  => '-%s/',
+        'km_min'     => 'km-%s',
+        'km_max'     => '-%s/',
+        'page'      => '?page=%s'
     ];
 
     /**
@@ -87,7 +86,7 @@ class CrawlerService
      */
     public function getCarDetail(int $id): array
     {
-        $this->createClient($this->crawlerUrlDetail . $id);
+        $this->createClient($this->crawlerUrl. $id);
 
         $detailDiv = $this->crawler->filter('.item-info');
 
@@ -119,11 +118,9 @@ class CrawlerService
      */
     private function setFilters(array $filters)
     {
-        rsort($filters);
-
-        foreach ($filters as $filter) {
-            if (in_array($filter, $this->availableFilters)) {
-                $this->crawlerUrl .= '/' ;
+        foreach ($this->availableFilters as $filter => $value) {
+            if (array_key_exists($filter, $filters)) {
+                $this->crawlerUrl .= sprintf($value, $filters[$filter]);
             }
         }
     }

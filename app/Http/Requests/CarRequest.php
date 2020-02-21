@@ -33,14 +33,14 @@ class CarRequest extends FormRequest
     public function rules()
     {
         return [
-            'marca'     => 'string',
-            'modelo'    => 'string|required_if:marca',
-            'an_min'    => 'integer|digits_between:1930,' . (new Carbon())->year,
-            'ano_max'   => 'integer|digits_between:1930,' . (new Carbon())->year,
-            'preco_min' => 'integer|digits_between:2000,2000000',
-            'preco_max' => 'integer|digits_between:2000,2000000',
-            'km_min'    => 'integer|digits_between:0,2000000',
-            'km_max'    => 'integer|digits_between:0,2000000',
+            'marca'     => 'string|required_with:modelo',
+            'modelo'    => 'string',
+            'ano_min'   => 'integer|required_with:ano_max|between:1930,' . (new Carbon())->year,
+            'ano_max'   => 'integer|required_with:ano_min|gte:ano_min|between:1930,' . (new Carbon())->year,
+            'preco_min' => 'integer|required_with:preco_max|between:2000,2000000',
+            'preco_max' => 'integer|required_with:preco_min|gte:preco_min|between:2000,2000000',
+            'km_min'    => 'integer|required_with:km_max|between:0,2000000',
+            'km_max'    => 'integer|required_with:km_min|gte:km_min|between:0,2000000',
             'page'      => 'integer'
         ];
     }
