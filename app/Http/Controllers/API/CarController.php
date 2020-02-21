@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API;
 use App\Http\Requests\CarDetailRequest;
 use App\Http\Requests\CarRequest;
 use App\Services\CrawlerService;
+use Carbon\Carbon;
 use Illuminate\Http\JsonResponse;
 
 /**
@@ -14,10 +15,21 @@ use Illuminate\Http\JsonResponse;
 class CarController extends BaseController
 {
     /**
-     * Display a listing of all items.
+     * List cars.
      *
      * @param CarRequest $request
      * @return JsonResponse
+     *
+     * @group Cars
+     * @queryParam marca (string) Brand of the car.
+     * @queryParam modelo (string) Model of the car.
+     * @queryParam ano_min (integer) Minimum Year.
+     * @queryParam ano_max (integer) Maximum Year.
+     * @queryParam preco_min (integer) Minimum Price.
+     * @queryParam preco_max (integer) Maximum Price.
+     * @queryParam km_min (integer) Minimum Odometer.
+     * @queryParam km_max (integer) Maximum Odometer.
+     * @queryParam page (integer) Page.
      */
     public function index(CarRequest $request)
     {
@@ -30,10 +42,13 @@ class CarController extends BaseController
     }
 
     /**
-     * Display a detail of a item.
+     * Show car details.
      *
      * @param int $id
      * @return JsonResponse
+     *
+     * @group Cars
+     * @urlParam id required (integer) The id of the car.
      */
     public function show(int $id)
     {

@@ -1,0 +1,136 @@
+{
+    "variables": [],
+    "info": {
+        "name": "Laravel API",
+        "_postman_id": "ee5aa19b-2418-4d3a-8c45-8b077a3738d0",
+        "description": "",
+        "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.0.0\/collection.json"
+    },
+    "item": [
+        {
+            "name": "Cars",
+            "description": "",
+            "item": [
+                {
+                    "name": "List cars.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost",
+                            "path": "api\/cars",
+                            "query": [
+                                {
+                                    "key": "marca",
+                                    "value": "nulla",
+                                    "description": "(string) Brand of the car.",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "modelo",
+                                    "value": "qui",
+                                    "description": "(string) Model of the car.",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "ano_min",
+                                    "value": "nihil",
+                                    "description": "(integer) Minimum Year.",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "ano_max",
+                                    "value": "dolores",
+                                    "description": "(integer) Maximum Year.",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "preco_min",
+                                    "value": "rerum",
+                                    "description": "(integer) Minimum Price.",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "preco_max",
+                                    "value": "et",
+                                    "description": "(integer) Maximum Price.",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "km_min",
+                                    "value": "vel",
+                                    "description": "(integer) Minimum Odometer.",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "km_max",
+                                    "value": "quo",
+                                    "description": "(integer) Maximum Odometer.",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "page",
+                                    "value": "voluptatem",
+                                    "description": "(integer) Page.",
+                                    "disabled": false
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Show car details.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost",
+                            "path": "api\/cars\/:id",
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "blanditiis",
+                                    "description": "(integer) The id of the car."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                }
+            ]
+        }
+    ]
+}

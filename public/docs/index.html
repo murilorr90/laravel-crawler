@@ -1,0 +1,244 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>API Reference</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/all.js"></script>
+
+
+          <script>
+        $(function() {
+            setupLanguages(["bash","javascript"]);
+        });
+      </script>
+      </head>
+
+  <body class="">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar.png" />
+      </span>
+    </a>
+    <div class="tocify-wrapper">
+        <img src="images/logo.png" />
+                    <div class="lang-selector">
+                                  <a href="#" data-language-name="bash">bash</a>
+                                  <a href="#" data-language-name="javascript">javascript</a>
+                            </div>
+                            <div class="search">
+              <input type="text" class="search" id="input-search" placeholder="Search">
+            </div>
+            <ul class="search-results"></ul>
+              <div id="toc">
+      </div>
+                    <ul class="toc-footer">
+                                  <li><a href='http://github.com/mpociot/documentarian'>Documentation Powered by Documentarian</a></li>
+                            </ul>
+            </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+          <!-- START_INFO -->
+<h1>Info</h1>
+<p>Welcome to the generated API reference.
+<a href="http://localhost/docs/collection.json">Get Postman Collection</a></p>
+<!-- END_INFO -->
+<h1>Cars</h1>
+<!-- START_b5807964b67925bcb310ef24f51967da -->
+<h2>List cars.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://localhost/api/cars?marca=nulla&amp;modelo=qui&amp;ano_min=nihil&amp;ano_max=dolores&amp;preco_min=rerum&amp;preco_max=et&amp;km_min=vel&amp;km_max=quo&amp;page=voluptatem" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/cars"
+);
+
+let params = {
+    "marca": "nulla",
+    "modelo": "qui",
+    "ano_min": "nihil",
+    "ano_max": "dolores",
+    "preco_min": "rerum",
+    "preco_max": "et",
+    "km_min": "vel",
+    "km_max": "quo",
+    "page": "voluptatem",
+};
+Object.keys(params)
+    .forEach(key =&gt; url.searchParams.append(key, params[key]));
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (422):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "success": false,
+    "message": "Validation error",
+    "data": {
+        "ano_min": [
+            "The ano min must be an integer.",
+            "The ano min must be between 1930 and 2020."
+        ],
+        "ano_max": [
+            "The ano max must be an integer.",
+            "The ano max must be between 1930 and 2020."
+        ],
+        "preco_min": [
+            "The preco min must be an integer.",
+            "The preco min must be between 2000 and 2000000."
+        ],
+        "preco_max": [
+            "The preco max must be an integer.",
+            "The preco max must be greater than or equal 5.",
+            "The preco max must be between 2000 and 2000000."
+        ],
+        "km_min": [
+            "The km min must be an integer."
+        ],
+        "km_max": [
+            "The km max must be an integer."
+        ],
+        "page": [
+            "The page must be an integer."
+        ]
+    }
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET api/cars</code></p>
+<h4>Query Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>marca</code></td>
+<td>optional</td>
+<td>(string) Brand of the car.</td>
+</tr>
+<tr>
+<td><code>modelo</code></td>
+<td>optional</td>
+<td>(string) Model of the car.</td>
+</tr>
+<tr>
+<td><code>ano_min</code></td>
+<td>optional</td>
+<td>(integer) Minimum Year.</td>
+</tr>
+<tr>
+<td><code>ano_max</code></td>
+<td>optional</td>
+<td>(integer) Maximum Year.</td>
+</tr>
+<tr>
+<td><code>preco_min</code></td>
+<td>optional</td>
+<td>(integer) Minimum Price.</td>
+</tr>
+<tr>
+<td><code>preco_max</code></td>
+<td>optional</td>
+<td>(integer) Maximum Price.</td>
+</tr>
+<tr>
+<td><code>km_min</code></td>
+<td>optional</td>
+<td>(integer) Minimum Odometer.</td>
+</tr>
+<tr>
+<td><code>km_max</code></td>
+<td>optional</td>
+<td>(integer) Maximum Odometer.</td>
+</tr>
+<tr>
+<td><code>page</code></td>
+<td>optional</td>
+<td>(integer) Page.</td>
+</tr>
+</tbody>
+</table>
+<!-- END_b5807964b67925bcb310ef24f51967da -->
+<!-- START_5835f3073a1fb3277b5fc35d89bad64e -->
+<h2>Show car details.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://localhost/api/cars/blanditiis" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/cars/blanditiis"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (500):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "message": "Server Error"
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET api/cars/{id}</code></p>
+<h4>URL Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>required</td>
+<td>(integer) The id of the car.</td>
+</tr>
+</tbody>
+</table>
+<!-- END_5835f3073a1fb3277b5fc35d89bad64e -->
+      </div>
+      <div class="dark-box">
+                        <div class="lang-selector">
+                                    <a href="#" data-language-name="bash">bash</a>
+                                    <a href="#" data-language-name="javascript">javascript</a>
+                              </div>
+                </div>
+    </div>
+  </body>
+</html>
