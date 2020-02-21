@@ -55,7 +55,7 @@
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "http://localhost/api/cars?marca=nulla&amp;modelo=qui&amp;ano_min=nihil&amp;ano_max=dolores&amp;preco_min=rerum&amp;preco_max=et&amp;km_min=vel&amp;km_max=quo&amp;page=voluptatem" \
+    -G "http://localhost/api/cars?marca=soluta&amp;modelo=natus&amp;ano_min=deserunt&amp;ano_max=inventore&amp;preco_min=ut&amp;preco_max=cupiditate&amp;km_min=illum&amp;km_max=porro&amp;page=eligendi" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
@@ -63,15 +63,15 @@
 );
 
 let params = {
-    "marca": "nulla",
-    "modelo": "qui",
-    "ano_min": "nihil",
-    "ano_max": "dolores",
-    "preco_min": "rerum",
-    "preco_max": "et",
-    "km_min": "vel",
-    "km_max": "quo",
-    "page": "voluptatem",
+    "marca": "soluta",
+    "modelo": "natus",
+    "ano_min": "deserunt",
+    "ano_max": "inventore",
+    "preco_min": "ut",
+    "preco_max": "cupiditate",
+    "km_min": "illum",
+    "km_max": "porro",
+    "page": "eligendi",
 };
 Object.keys(params)
     .forEach(key =&gt; url.searchParams.append(key, params[key]));
@@ -108,7 +108,6 @@ fetch(url, {
         ],
         "preco_max": [
             "The preco max must be an integer.",
-            "The preco max must be greater than or equal 5.",
             "The preco max must be between 2000 and 2000000."
         ],
         "km_min": [
@@ -188,11 +187,11 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "http://localhost/api/cars/blanditiis" \
+    -G "http://localhost/api/cars/eius" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/cars/blanditiis"
+    "http://localhost/api/cars/eius"
 );
 
 let headers = {

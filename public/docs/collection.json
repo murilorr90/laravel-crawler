@@ -2,7 +2,7 @@
     "variables": [],
     "info": {
         "name": "Laravel API",
-        "_postman_id": "ee5aa19b-2418-4d3a-8c45-8b077a3738d0",
+        "_postman_id": "f6f6a5d6-8678-499a-bc0e-7a073b78306e",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.0.0\/collection.json"
     },
@@ -21,55 +21,55 @@
                             "query": [
                                 {
                                     "key": "marca",
-                                    "value": "nulla",
+                                    "value": "soluta",
                                     "description": "(string) Brand of the car.",
                                     "disabled": false
                                 },
                                 {
                                     "key": "modelo",
-                                    "value": "qui",
+                                    "value": "natus",
                                     "description": "(string) Model of the car.",
                                     "disabled": false
                                 },
                                 {
                                     "key": "ano_min",
-                                    "value": "nihil",
+                                    "value": "deserunt",
                                     "description": "(integer) Minimum Year.",
                                     "disabled": false
                                 },
                                 {
                                     "key": "ano_max",
-                                    "value": "dolores",
+                                    "value": "inventore",
                                     "description": "(integer) Maximum Year.",
                                     "disabled": false
                                 },
                                 {
                                     "key": "preco_min",
-                                    "value": "rerum",
+                                    "value": "ut",
                                     "description": "(integer) Minimum Price.",
                                     "disabled": false
                                 },
                                 {
                                     "key": "preco_max",
-                                    "value": "et",
+                                    "value": "cupiditate",
                                     "description": "(integer) Maximum Price.",
                                     "disabled": false
                                 },
                                 {
                                     "key": "km_min",
-                                    "value": "vel",
+                                    "value": "illum",
                                     "description": "(integer) Minimum Odometer.",
                                     "disabled": false
                                 },
                                 {
                                     "key": "km_max",
-                                    "value": "quo",
+                                    "value": "porro",
                                     "description": "(integer) Maximum Odometer.",
                                     "disabled": false
                                 },
                                 {
                                     "key": "page",
-                                    "value": "voluptatem",
+                                    "value": "eligendi",
                                     "description": "(integer) Page.",
                                     "disabled": false
                                 }
@@ -106,7 +106,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "blanditiis",
+                                    "value": "eius",
                                     "description": "(integer) The id of the car."
                                 }
                             ]

@@ -30,7 +30,7 @@ Welcome to the generated API reference.
 
 ```bash
 curl -X GET \
-    -G "http://localhost/api/cars?marca=nulla&modelo=qui&ano_min=nihil&ano_max=dolores&preco_min=rerum&preco_max=et&km_min=vel&km_max=quo&page=voluptatem" \
+    -G "http://localhost/api/cars?marca=soluta&modelo=natus&ano_min=deserunt&ano_max=inventore&preco_min=ut&preco_max=cupiditate&km_min=illum&km_max=porro&page=eligendi" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
@@ -41,15 +41,15 @@ const url = new URL(
 );
 
 let params = {
-    "marca": "nulla",
-    "modelo": "qui",
-    "ano_min": "nihil",
-    "ano_max": "dolores",
-    "preco_min": "rerum",
-    "preco_max": "et",
-    "km_min": "vel",
-    "km_max": "quo",
-    "page": "voluptatem",
+    "marca": "soluta",
+    "modelo": "natus",
+    "ano_min": "deserunt",
+    "ano_max": "inventore",
+    "preco_min": "ut",
+    "preco_max": "cupiditate",
+    "km_min": "illum",
+    "km_max": "porro",
+    "page": "eligendi",
 };
 Object.keys(params)
     .forEach(key => url.searchParams.append(key, params[key]));
@@ -89,7 +89,6 @@ fetch(url, {
         ],
         "preco_max": [
             "The preco max must be an integer.",
-            "The preco max must be greater than or equal 5.",
             "The preco max must be between 2000 and 2000000."
         ],
         "km_min": [
@@ -131,14 +130,14 @@ Parameter | Status | Description
 
 ```bash
 curl -X GET \
-    -G "http://localhost/api/cars/blanditiis" \
+    -G "http://localhost/api/cars/eius" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/cars/blanditiis"
+    "http://localhost/api/cars/eius"
 );
 
 let headers = {
